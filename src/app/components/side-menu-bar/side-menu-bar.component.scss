@@ -1,0 +1,10 @@
+.side-menu-bar {
+  min-height: 100vh !important;
+  z-index: 999;
+  width: 16rem;
+  -webkit-box-shadow: 10px 0px 28px 1px rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: 10px 0px 28px 1px rgba(0, 0, 0, 0.26);
+  box-shadow: 10px 0px 28px 1px rgba(0, 0, 0, 0.26);
+  transition: 0.5s;
+  background: linear-gradient(to top, #c33764, #1d2671);
+}
