@@ -8,18 +8,24 @@ import {HeaderComponent} from './components/header/header.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import { SideBarMenuItemComponent } from './components/side-bar-menu-item/side-bar-menu-item.component';
+import { SideBarMenuDeviderComponent } from './components/side-bar-menu-devider/side-bar-menu-devider.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
     AppComponent,
     SideMenuBarComponent,
-    HeaderComponent
+    HeaderComponent,
+    SideBarMenuItemComponent,
+    SideBarMenuDeviderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatButtonModule,
     MatIconModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
