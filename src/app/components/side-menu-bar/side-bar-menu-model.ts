@@ -9,6 +9,7 @@ export interface MenuItem
     | 'basic'
     | 'collapsable'
     | 'divider'
+    | 'group'
   active?: boolean;
   disabled?: boolean;
   tooltip?: string;

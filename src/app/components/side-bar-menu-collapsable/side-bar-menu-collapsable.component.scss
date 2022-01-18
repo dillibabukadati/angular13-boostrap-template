@@ -61,3 +61,12 @@
   margin-left: auto;
   line-height: 24px;
 }
+
+.expanded {
+  transition: 0.5s;
+}
+
+.collapsed {
+  display: none;
+  transition: 0.5s;
+}

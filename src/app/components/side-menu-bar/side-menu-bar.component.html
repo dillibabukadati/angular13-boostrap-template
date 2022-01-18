@@ -3,6 +3,8 @@
   <div style="height: 52.8px">LOGO</div>
   <div class="mx-3">
     <div *ngFor="let item of sideMenu">
+      <app-side-bar-menu-collapsable [item]="item" *ngIf="item.type=='collapsable'"></app-side-bar-menu-collapsable>
+      <app-side-bar-menu-group [item]="item" *ngIf="item.type=='group'"></app-side-bar-menu-group>
       <app-side-bar-menu-item [item]="item" *ngIf="item.type=='basic'"></app-side-bar-menu-item>
       <app-side-bar-menu-devider *ngIf="item.type=='divider'"></app-side-bar-menu-devider>
     </div>
