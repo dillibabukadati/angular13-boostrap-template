@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MenuItem} from "./side-bar-menu-model";
+import {sideMenu} from "../side-menu-items";
 
 @Component({
   selector: 'app-side-menu-bar',
@@ -8,45 +9,13 @@ import {MenuItem} from "./side-bar-menu-model";
 })
 export class SideMenuBarComponent implements OnInit {
 
-  sideMenu: MenuItem[] = [
-    {
-      title: 'Home',
-      type: "group",
-    }, {
-      title: 'Dashboard',
-      type: "basic",
-      icon: `heroicons_outline:home`
-    }, {
-      title: 'Profile',
-      type: "basic",
-      icon: `heroicons_outline:user`
-    }, {
-      title: "",
-      type: "divider"
-    },
-    {
-      title: 'Users',
-      type: "collapsable",
-      icon: `heroicons_outline:users`,
-      children: [
-        {
-          title: 'Add User',
-          type: 'basic',
-          icon: 'heroicons_outline:user'
-        },
-        {
-          title: 'All Users',
-          type: 'basic',
-          icon: 'heroicons_outline:users'
-        }
-      ]
-    },
-  ];
+  sideMenu: MenuItem[] = [];
 
   constructor() {
   }
 
   ngOnInit(): void {
+    this.sideMenu = sideMenu;
   }
 
 }
