@@ -1,2 +1,7 @@
-<app-header></app-header>
-<app-side-menu-bar></app-side-menu-bar>
+<div class="wrapper">
+  <app-side-menu-bar></app-side-menu-bar>
+  <app-header class="top-nav-bar"></app-header>
+  <div class="body-content" id="body-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

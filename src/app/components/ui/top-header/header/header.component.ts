@@ -16,20 +16,23 @@ export class HeaderComponent implements OnInit {
   onMenuClick() {
     let sideMenu = document.getElementById('sideMenuBar');
     let header = document.getElementById('header');
+    let bodyContent = document.getElementById('body-content');
+    console.log(bodyContent)
     if (!header) {
       return;
     }
     if (!sideMenu) {
       return;
     }
-    sideMenu.style.setProperty('width','0px !important')
+    sideMenu.style.setProperty('width', '0px !important');
     if (sideMenu.offsetWidth > 1) {
-      console.log('coming')
       sideMenu.style.width = '0px';
       header.style.width = '100vw';
+      bodyContent.style.left = '0';
     } else {
       sideMenu.style.width = '16rem';
       header.style.width = 'calc(100% - 16rem)';
+      bodyContent.style.left = '16rem';
     }
   }
 }
