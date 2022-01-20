@@ -8,10 +8,12 @@ import {IconsModule} from "./shared/icons.module";
 import {HttpClientModule} from "@angular/common/http";
 import {SideNavBarModule} from "./components/ui/side-nav-bar/side-nav-bar.module";
 import {TopHeaderModule} from "./components/ui/top-header/top-header.module";
+import { LayoutComponent } from './components/ui/layout/layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LayoutComponent,
   ],
   imports: [
     IconsModule,
