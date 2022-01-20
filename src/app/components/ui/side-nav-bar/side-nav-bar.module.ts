@@ -6,6 +6,7 @@ import {SideBarMenuGroupComponent} from "./side-bar-menu-group/side-bar-menu-gro
 import {SideBarMenuItemComponent} from "./side-bar-menu-item/side-bar-menu-item.component";
 import {SideMenuBarComponent} from "./side-menu-bar/side-menu-bar.component";
 import {MatIconModule} from "@angular/material/icon";
+import {RouterModule} from "@angular/router";
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import {MatIconModule} from "@angular/material/icon";
   imports: [
     CommonModule,
     MatIconModule,
+    RouterModule
   ]
 })
 export class SideNavBarModule {

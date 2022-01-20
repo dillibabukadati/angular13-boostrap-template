@@ -1,5 +1,13 @@
 <div class="header  d-flex align-items-center" id="header">
   <button mat-button class="bg-transparent" (click)="onMenuClick()">
-    <mat-icon aria-hidden="false" class="text-white" aria-label="Example home icon">menu</mat-icon>
+    <mat-icon aria-hidden="false" class="text-dark" aria-label="Example home icon">menu</mat-icon>
   </button>
+  <div class="me-2 ms-auto">
+    <div mat-button [matMenuTriggerFor]="menu">
+      <img src="assets/images/1641577620559.jpg" class="profile-icon">
+    </div>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Logout</button>
+    </mat-menu>
+  </div>
 </div>

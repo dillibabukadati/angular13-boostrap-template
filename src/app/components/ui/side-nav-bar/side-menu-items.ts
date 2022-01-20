@@ -7,11 +7,13 @@ export const sideMenu: MenuItem[] = [
   }, {
     title: 'Dashboard',
     type: "basic",
-    icon: `heroicons_outline:home`
+    icon: `heroicons_outline:home`,
+    link: '/'
   }, {
     title: 'Profile',
     type: "basic",
-    icon: `heroicons_outline:user`
+    icon: `heroicons_outline:user`,
+    link: 'profile'
   }, {
     title: "",
     type: "divider"
@@ -32,5 +34,16 @@ export const sideMenu: MenuItem[] = [
         icon: 'heroicons_outline:users'
       }
     ]
+  }, {
+    title: 'Dashboard',
+    type: "basic",
+    icon: `heroicons_outline:home`
+  }, {
+    title: 'Profile',
+    type: "basic",
+    icon: `heroicons_outline:user`
+  }, {
+    title: "",
+    type: "divider"
   },
 ];
