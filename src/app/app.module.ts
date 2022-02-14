@@ -1,31 +1,32 @@
-import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
-import {AppRoutingModule} from './app-routing.module';
-import {AppComponent} from './app.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {IconsModule} from "./shared/icons.module";
-import {HttpClientModule} from "@angular/common/http";
-import {SideNavBarModule} from "./components/ui/side-nav-bar/side-nav-bar.module";
-import {TopHeaderModule} from "./components/ui/top-header/top-header.module";
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { IconsModule } from './shared/icons.module';
+import { HttpClientModule } from '@angular/common/http';
+import { SideNavBarModule } from './components/ui/side-nav-bar/side-nav-bar.module';
+import { TopHeaderModule } from './components/ui/top-header/top-header.module';
 import { LayoutComponent } from './components/ui/layout/layout.component';
+import { MatIconModule } from '@angular/material/icon';
+import { AuthGuard } from './components/ui/auth/auth.guard';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LayoutComponent,
-  ],
+  declarations: [AppComponent, LayoutComponent],
   imports: [
     IconsModule,
+    MatIconModule,
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     SideNavBarModule,
     TopHeaderModule,
+    RouterModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [AuthGuard],
+  bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule {}

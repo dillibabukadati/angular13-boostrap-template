@@ -1,29 +1,23 @@
-<!--<div class="vh-100 vw-100 d-flex justify-content-center align-items-center bg">-->
-<!--  <div class="my-5 mx-5 bg-white shadow-lg signup-card w-75 h-75 row">-->
-<!--    <div class="col-12 col-sm-5 h-100 m-0 p-0 form-container d-flex justify-content-center align-items-center">-->
-<!--      <div class="h-75 w-75">-->
-<!--        <h1 class="text-white">Login</h1>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="d-none d-sm-block col-sm-7 h-100  m-0 p-0 ">-->
-<!--      <img src="assets/images/sign-in.jpg" class="infographic">-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
 <div class="holder">
   <div class="container" id="container">
     <div class="form-container log-in-container">
-      <form action="#">
+      <form [formGroup]="dataForm">
         <h1>Login</h1>
         <div class="social-container">
-          <a href="#" class="social"><i class="fa fa-facebook fa-2x"></i></a>
-          <a href="#" class="social"><i class="fab fa fa-twitter fa-2x"></i></a>
+          <a href="#" class="social">
+            <mat-icon [svgIcon]="'heroicons_outline:facebook'"></mat-icon>
+          </a>
+          <a href="#" class="social">
+            <mat-icon [svgIcon]="'heroicons_outline:google'"></mat-icon>
+          </a>
         </div>
         <span>or use your account</span>
-        <input type="email" placeholder="Email"/>
-        <input type="password" placeholder="Password"/>
-        <a href="#">Forgot your password?</a>
-        <button>Log In</button>
+        <input type="email" formGroupName="email" placeholder="Email" />
+        <input type="password" formGroupName="password" placeholder="Password" />
+        <a href="javascript:void(0)">Forgot your password?</a>
+        <button (click)="onLogin()">Log In</button>
+        <p>Have an account already? <a class="text-primary" href="javascript:void(0)" [routerLink]="['/login']">Login
+            here.</a></p>
       </form>
     </div>
     <div class="overlay-container">

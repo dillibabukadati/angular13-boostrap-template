@@ -1,33 +1,10 @@
-//.bg {
-//  background: rgb(255, 255, 255);
-//  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(57, 54, 54, 1) 62%);
-//}
-//
-//.signup-card {
-//  border-radius: 10px;
-//}
-//
-//.form-container {
-//  background: rgb(145,179,250);
-//  background: linear-gradient(337deg, rgba(145,179,250,1) 4%, rgba(79,82,255,1) 97%);
-//  border-bottom-left-radius: 10px;
-//  border-top-left-radius: 10px;
-//}
-//
-//.infographic {
-//  width: 100%;
-//  height: 100%;
-//  border-bottom-right-radius: 10px;
-//  border-top-right-radius: 10px;
-//}
-
 .holder {
   background: #f3e0e2;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   height: 100vh;
 }
 
@@ -41,7 +18,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   height: 100vh;
   margin: -20px 0 50px;
 }
@@ -72,9 +49,9 @@ a {
 
 button {
   border-radius: 20px;
-  border: 1px solid #FF4B2B;
-  background-color: #FF4B2B;
-  color: #FFFFFF;
+  border: 1px solid #ff4b2b;
+  background-color: #ff4b2b;
+  color: #ffffff;
   font-size: 12px;
   font-weight: bold;
   padding: 12px 45px;
@@ -84,7 +61,7 @@ button {
 }
 
 form {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -125,7 +102,6 @@ input {
   z-index: 2;
 }
 
-
 .overlay-container {
   position: absolute;
   top: 0;
@@ -134,15 +110,14 @@ input {
   height: 100%;
 }
 
-
 .overlay {
-  background: #FF416C;
-  background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-  background: linear-gradient(to right, #FF4B2B, #FF416C);
+  background: #ff416c;
+  background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
+  background: linear-gradient(to right, #ff4b2b, #ff416c);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
-  color: #FFFFFF;
+  color: #ffffff;
   position: relative;
   left: -100%;
   height: 100%;
@@ -162,18 +137,16 @@ input {
   width: 50%;
 }
 
-
 .overlay-right {
   right: 0;
 }
 
-
 .social-container {
-  margin: 50px 0;
+  margin: 30px 0;
 }
 
 .social-container a {
-  border: 1px solid #DDDDDD;
+  border: 1px solid #dddddd;
   border-radius: 50%;
   display: inline-flex;
   justify-content: center;
