@@ -1,23 +1,27 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { AuthService } from '../../auth/services/auth.service';
+import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  constructor(
+    private authService: AuthService,
+    @Inject(LOCAL_STORAGE) private storageService: StorageService,
+    private router: Router
+  ) {}
 
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onMenuClick() {
     let sideMenu = document.getElementById('sideMenuBar');
     let header = document.getElementById('header');
     let bodyContent = document.getElementById('body-content');
-    console.log(bodyContent)
+    console.log(bodyContent);
     if (!header) {
       return;
     }
@@ -34,5 +38,17 @@ export class HeaderComponent implements OnInit {
       header.style.width = 'calc(100% - 16rem)';
       bodyContent.style.left = '16rem';
     }
+  }
+
+  onLogout() {
+    this.authService.logout().subscribe(
+      () => {
+        this.storageService.clear();
+        this.router.navigate(['/login']);
+      },
+      (err) => {
+        console.error(err);
+      }
+    );
   }
 }

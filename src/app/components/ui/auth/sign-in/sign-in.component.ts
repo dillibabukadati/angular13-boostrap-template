@@ -16,7 +16,7 @@ export class SignInComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    @Inject(LOCAL_STORAGE) private storage: StorageService,
+    @Inject(LOCAL_STORAGE) private storageService: StorageService,
     private router: Router
   ) {}
 
@@ -37,7 +37,7 @@ export class SignInComponent implements OnInit {
       this.authService.login(payload).subscribe(
         (res: any) => {
           console.log(res);
-          this.storage.set('loggedInUser', res.user);
+          this.storageService.set('loggedInUser', res.user);
           this.router.navigate(['/']);
         },
         (error) => {
