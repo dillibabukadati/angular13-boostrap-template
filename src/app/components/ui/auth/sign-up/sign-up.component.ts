@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AlertService } from '@full-fledged/alerts';
 import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
 import { AuthService } from '../services/auth.service';
 
@@ -17,7 +18,8 @@ export class SignUpComponent implements OnInit {
     private fb: FormBuilder,
     private authService: AuthService,
     @Inject(LOCAL_STORAGE) private storageService: StorageService,
-    private router: Router
+    private router: Router,
+    private alertService: AlertService
   ) {}
 
   ngOnInit(): void {
@@ -35,7 +37,7 @@ export class SignUpComponent implements OnInit {
 
   onRegister() {
     this.isSubmitted = true;
-    console.log(this.dataForm.value)
+    console.log(this.dataForm.value);
     if (this.dataForm.invalid) {
       return;
     }
@@ -48,6 +50,7 @@ export class SignUpComponent implements OnInit {
       },
       (error) => {
         console.error(error);
+        this.alertService.danger(error.message);
       }
     );
   }
