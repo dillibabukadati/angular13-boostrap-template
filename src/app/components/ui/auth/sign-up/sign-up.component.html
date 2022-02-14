@@ -3,14 +3,26 @@
     <div class="form-container log-in-container">
       <form [formGroup]="dataForm">
         <h1 class="py-2">Register</h1>
-        <input type="text" placeholder="Full Name" formGroupName="name"
-          [ngClass]="{'is-invalid': dataForm.get('name')?.touched && dataForm.get('name')?.invalid}" />
-        <input type="email" placeholder="Email" formGroupName="email"
-          [ngClass]="{'is-invalid': dataForm.get('email')?.touched && dataForm.get('email')?.invalid}" />
-        <input type="password" placeholder="Password" formGroupName="password"
-          [ngClass]="{'is-invalid': dataForm.get('password')?.touched && dataForm.get('password')?.invalid}">
-        <input type="password" placeholder="Confirm Password" formGroupName="confirmPassword"
-          [ngClass]="{'is-invalid': dataForm.get('confirmPassword')?.touched && dataForm.get('confirmPassword')?.invalid}" />
+        <input type="text" placeholder="Full Name" formControlName="name"
+          [ngClass]="{'is-invalid': dataForm.get('name')?.touched || isSubmitted && dataForm.get('name')?.invalid}"
+          required />
+        <small class="invalid-feedback m-0 text-start">{{dataForm.get('name')?.invalid?'Full Name is
+          Required':''}}</small>
+        <input type="email" placeholder="Email" formControlName="email"
+          [ngClass]="{'is-invalid': dataForm.get('email')?.touched || isSubmitted  && dataForm.get('email')?.invalid}"
+          required />
+        <small class="invalid-feedback m-0 text-start">{{dataForm.get('email')?.invalid?'Email is
+          Required':''}}</small>
+        <input type="password" placeholder="Password" formControlName="password"
+          [ngClass]="{'is-invalid': dataForm.get('password')?.touched || isSubmitted  && dataForm.get('password')?.invalid}"
+          required>
+        <small class="invalid-feedback m-0 text-start">{{dataForm.get('password')?.invalid?'Password is
+          Required':''}}</small>
+        <input type="password" placeholder="Confirm Password" formControlName="confirmPassword"
+          [ngClass]="{'is-invalid': dataForm.get('confirmPassword')?.touched || isSubmitted  && dataForm.get('confirmPassword')?.invalid}"
+          required />
+        <small class="invalid-feedback m-0 text-start">{{dataForm.get('confirmPassword')?.invalid?'Confirm Password is
+          Required':''}}</small>
         <button class="mt-2" (click)="onRegister()">Register</button>
         <p>Have an account already? <a class="text-primary" href="javascript:void(0)" [routerLink]="['/login']">Login
             here.</a></p>

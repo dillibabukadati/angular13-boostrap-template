@@ -10,7 +10,7 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./sign-up.component.scss'],
 })
 export class SignUpComponent implements OnInit {
-  dataForm: FormGroup;
+  public dataForm: FormGroup;
   isSubmitted = false;
   successMsg = '';
   constructor(
