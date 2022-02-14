@@ -8,7 +8,6 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { MatIconModule } from '@angular/material/icon';
 import { IconsModule } from 'src/app/shared/icons.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { WebStorageService } from 'ngx-webstorage-service';
 @NgModule({
   declarations: [SignUpComponent, SignInComponent],
   imports: [

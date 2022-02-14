@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class AuthService extends CommonService {
+ 
   API_ENDPOINT: string;
   constructor(private httpClient: HttpClient) {
     super();
@@ -30,5 +31,14 @@ export class AuthService extends CommonService {
         map((response) => response),
         catchError((err) => err.error)
       );
+  }
+  register(value: any) {
+    return this.httpClient
+    .post(`${this.API_ENDPOINT}${apiConfig.auth.register}`, value)
+    .pipe(
+      map((response) => response),
+      catchError((err) => err.error)
+    );
+
   }
 }
